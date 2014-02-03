@@ -1,5 +1,3 @@
-import java.util.*;
-
 class Euler12
 {
   public static void main(String arg[])
@@ -27,15 +25,12 @@ class Euler12
     long freq = 0;
     long next;
 
-    LinkedList<Long> list = new LinkedList<Long>();
-
     while(n % 2 == 0)
     {
       n /= 2;
       freq++;
     }
-    if(freq != 0)
-      list.add(freq);
+    count *= freq+1;
     
     freq = 0;
 
@@ -47,24 +42,12 @@ class Euler12
         freq++;
       }
       
-      if(freq != 0)
-        list.add(freq);
+      count *= freq+1;
       freq = 0;
       i += 2;
     }
 
-
-    Iterator<Long> it = list.iterator();
-
-    while(it.hasNext())
-    {
-      next = it.next();
-      count *= (next+1);
-    }
-
-    //System.err.println(count);
     return count;
   }
-    
 
 }
