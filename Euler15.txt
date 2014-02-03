@@ -1,0 +1,7 @@
+/*
+ * It's a 20x20 grid path.You can move 20 steps to the right,
+ * and 20 steps downwards. Total possible moves are 40.
+ * If we select the 20 ways we can move right, the other
+ * 20 moves downwards are automatically selected.
+ * So the solution is C(40,20)
+ */
