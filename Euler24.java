@@ -21,8 +21,8 @@ class Euler24
       next(arr, index-1);
     else
     {
-      int min = 10;
-      int i2 = 15;
+      int min = Integer.MAX_VALUE;
+      int i2 = Integer.MAX_VALUE;
       
       for(int i = index; i < arr.length; i++)
         if(arr[i] - arr[index-1] < min && arr[i] - arr[index-1] > 0)
