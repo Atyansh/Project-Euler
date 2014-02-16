@@ -17,6 +17,8 @@ class Euler24
 
   public static void next(char[] arr, int index)
   {
+    if(index == 0)
+      return;
     if(arr[index] < arr[index - 1])
       next(arr, index-1);
     else
