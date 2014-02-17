@@ -19,7 +19,7 @@ class Euler24
   {
     if(index == 0)
       return;
-    if(arr[index] < arr[index - 1])
+    if(arr[index] <= arr[index - 1])
       next(arr, index-1);
     else
     {
@@ -32,9 +32,13 @@ class Euler24
             min = arr[i] - arr[index-1];
             i2 = i;
         }
-
-        arr[index-1] += min;
-        arr[i2] -= min;
+        if(i2 != Integer.MAX_VALUE)
+        {
+          arr[index-1] += min;
+          arr[i2] -= min;
+        }
+        else
+          next(arr, index-1);
 
       Arrays.sort(arr, index, arr.length);
     }
