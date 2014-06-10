@@ -6,10 +6,7 @@ class Euler16
   {
     BigInteger b = new BigInteger("2");
 
-    for(int i = 2; i <= 1000; i++)
-    {
-      b = b.add(b);
-    }
+      b = b.pow(1000);
 
     String s = b.toString();
     int length = s.length();
