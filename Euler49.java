@@ -14,8 +14,7 @@ class Euler49
 
     for(int i = 1001; i < 9999; i += 2)
     {
-      //System.out.println(i);
-      if(isPrime(i))// && uniqueDigits(i))
+      if(isPrime(i))
       {
         str = "" + i;
         prev = str;
