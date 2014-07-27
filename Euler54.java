@@ -75,15 +75,15 @@ class Card implements Comparable<Card>
     if(a1 >= '2' && a1 <= '9')
       value = a1 - 48;
     else if(a1 == 'T')
-      value = 10;
+      value = TEN;
     else if(a1 == 'J')
-      value = 11;
+      value = JACK;
     else if(a1 == 'Q')
-      value = 12;
+      value = QUEEN;
     else if(a1 == 'K')
-      value = 13;
+      value = KING;
     else if(a1 == 'A')
-      value = 14;
+      value = ACE;
 
     switch(a2)
     {
@@ -134,8 +134,6 @@ class Poker
   {
     Arrays.sort(c1);
     Arrays.sort(c2);
-
-    System.err.println(Arrays.toString(c1) + "  " + Arrays.toString(c2));
 
     h1 = new Hand(c1);
     h2 = new Hand(c2);
