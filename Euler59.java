@@ -5,7 +5,7 @@ class Euler59
 {
   public static void main(String[] arg)
   {
-    File file = new File("cipher1.txt");
+    File file = new File("Euler59.txt");
     
     Scanner scan;
 
