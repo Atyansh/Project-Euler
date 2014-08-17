@@ -18,17 +18,15 @@ class Node
 
 class Euler67
 {
-  
-  
   public static void main(String arg[]) throws IOException
   {
     File file = new File("Euler67.txt");
 
     Scanner scan = new Scanner(file);
 
-    Node[][] pattern = new Node[100][];
-    
     int length = 100;
+    
+    Node[][] pattern = new Node[length][];
     
     long max = 0;
 
@@ -52,7 +50,7 @@ class Euler67
     
     pattern[0][0].distance = pattern[0][0].value;
 
-    Euler18.setDistance(pattern[0][0]);
+    setDistance(pattern[0][0]);
 
     for(int j = 0; j < length; j++)
         if(pattern[length-1][j].distance > max)

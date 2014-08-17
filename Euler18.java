@@ -18,8 +18,6 @@ class Node
 
 class Euler18
 {
-  
-  
   public static void main(String arg[]) throws IOException
   {
     File file = new File("Euler18.txt");
@@ -52,7 +50,7 @@ class Euler18
     
     pattern[0][0].distance = pattern[0][0].value;
 
-    Euler18.setDistance(pattern[0][0]);
+    setDistance(pattern[0][0]);
 
     for(int j = 0; j < length; j++)
         if(pattern[length-1][j].distance > max)
