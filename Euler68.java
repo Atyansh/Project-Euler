@@ -1,7 +1,5 @@
-class Euler68
-{
-  public static void main(String[] arg)
-  {
+class Euler68 {
+  public static void main(String[] arg) {
     int ringVertices = 5;
     int ringSize = ringVertices * 2;
 
@@ -14,8 +12,7 @@ class Euler68
     for(int i = 0, j = 48; i < ringSize; i++, j++)
       ring[i] = (char) (j);
 
-a:  while(!prev.equals(new String(ring)))
-    {
+a:  while(!prev.equals(new String(ring))) {
       prev = new String(ring);
       Euler24.next(ring, ringSize - 1);
 
@@ -30,8 +27,7 @@ a:  while(!prev.equals(new String(ring)))
       sum = getSum(ring, smallIndex);
       combination = combination + getCombination(ring, smallIndex);
 
-      for(int i = smallIndex + 1; i != smallIndex; i++)
-      {
+      for(int i = smallIndex + 1; i != smallIndex; i++) {
         if(i == ringSize)
           i = ringSize/2;
         
@@ -54,8 +50,7 @@ a:  while(!prev.equals(new String(ring)))
     System.out.println(answer);
   }
 
-  public static int smallIndex(char[] arr)
-  {
+  public static int smallIndex(char[] arr) {
     int index = arr.length/2;
 
     for(int i = index + 1; i < arr.length; i++)
@@ -65,30 +60,26 @@ a:  while(!prev.equals(new String(ring)))
     return index;
   }
 
-  public static boolean incorrectDigits(char[] arr)
-  {
+  public static boolean incorrectDigits(char[] arr) {
     for(int i = arr.length/2; i < arr.length; i++)
       if(arr[i] == '9')
         return false;
     return true;
   }
 
-  public static int getSum(char[] arr, int i)
-  {
+  public static int getSum(char[] arr, int i) {
     if(i == arr.length - 1)
       return (arr[i] + arr[arr.length/2 - 1] + arr[0]);
     return (arr[i] + arr[i - arr.length/2] + arr[i + 1 - arr.length/2]);
   }
 
-  public static String getCombination(char[] arr, int i)
-  {
+  public static String getCombination(char[] arr, int i) {
     if(i == arr.length - 1)
       return ("" + arr[i] + arr[arr.length/2 - 1] + arr[0]);
     return ("" + arr[i] + arr[i - arr.length/2] + arr[i + 1 - arr.length/2]);
   }
 
-  public static long parse(long n)
-  {
+  public static long parse(long n) {
     char[] arr = ("" + n).toCharArray();
     String str = "";
 

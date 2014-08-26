@@ -1,10 +1,8 @@
 import java.util.*;
 import java.math.*;
 
-class Euler29
-{
-  public static void main(String[] arg)
-  {
+class Euler29 {
+  public static void main(String[] arg) {
     TreeSet<BigInteger> set = new TreeSet<BigInteger>();
 
     BigInteger A = new BigInteger("2");

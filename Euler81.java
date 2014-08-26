@@ -1,24 +1,20 @@
 import java.io.*;
 import java.util.*;
 
-class Node
-{
+class Node {
   int value;
   Node touch1;
   Node touch2;
 
   long distance = Long.MAX_VALUE;
 
-  Node(int value)
-  {
+  Node(int value) {
     this.value = value;
   }
 }
 
-class Euler81
-{
-  public static void main(String[] arg)
-  {
+class Euler81 {
+  public static void main(String[] arg) {
     File file = new File("Euler81.txt");
 
     Scanner scan;
@@ -27,13 +23,11 @@ class Euler81
 
     Node[][] pattern = new Node[length][length];
 
-    try
-    {
+    try {
       scan = new Scanner(file);
       scan.useDelimiter(",");
     }
-    catch(FileNotFoundException e)
-    {
+    catch(FileNotFoundException e) {
       System.err.println("File Not Found.");
       return;
     }
@@ -42,10 +36,8 @@ class Euler81
       for(int j = 0; j < length; j++)
         pattern[i][j] = new Node(scan.nextInt());
 
-    for(int i = 0; i < length; i++)
-    {
-      for(int j = 0; j < length; j++)
-      {
+    for(int i = 0; i < length; i++) {
+      for(int j = 0; j < length; j++) {
         if(i != length - 1)
           pattern[i][j].touch1 = pattern[i+1][j];
         if(j != length - 1)
@@ -61,27 +53,23 @@ class Euler81
   }
 
 
-  public static void setDistance(Node n)
-  {
+  public static void setDistance(Node n) {
     Node travel;
     Queue<Node> q = new LinkedList<Node>();
 
     q.add(n);
 
-    while(q.peek() != null)
-    {
+    while(q.peek() != null) {
       travel = q.remove();
 
       if(travel.touch1 != null)
-        if(travel.touch1.distance > (travel.distance + travel.touch1.value))
-        {
+        if(travel.touch1.distance > (travel.distance + travel.touch1.value)) {
           travel.touch1.distance = travel.distance + travel.touch1.value;
           q.add(travel.touch1);
         }
 
       if(travel.touch2 != null)
-        if(travel.touch2.distance > (travel.distance + travel.touch2.value))
-        {
+        if(travel.touch2.distance > (travel.distance + travel.touch2.value)) {
           travel.touch2.distance = travel.distance + travel.touch2.value;
           q.add(travel.touch2);
         }

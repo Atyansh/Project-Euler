@@ -1,10 +1,8 @@
 import java.io.*;
 import java.util.*;
 
-class Euler22
-{
-  public static void main(String arg[]) throws IOException
-  {
+class Euler22 {
+  public static void main(String arg[]) throws IOException {
     File file = new File("Euler22.txt");
 
     BufferedReader br = new BufferedReader(new FileReader(file));
@@ -25,8 +23,7 @@ class Euler22
     System.out.println(sum);
   }
 
-  public static int getValue(String str)
-  {
+  public static int getValue(String str) {
     int length = str.length();
     int sum = 0;
 

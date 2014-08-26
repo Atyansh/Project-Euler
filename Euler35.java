@@ -1,18 +1,13 @@
-class Euler35
-{
-  public static void main(String[] arg)
-  {
+class Euler35 {
+  public static void main(String[] arg) {
     int count = 1;
     int num;
 
-a:  for(int i = 3; i < 1000000; i += 2)
-    {
-      if(isPrime(i))
-      {
+a:  for(int i = 3; i < 1000000; i += 2) {
+      if(isPrime(i)) {
         num = rotate(i);
 
-        while(num != i)
-        {
+        while(num != i) {
           if(!isPrime(num))
             continue a;
 
@@ -26,8 +21,7 @@ a:  for(int i = 3; i < 1000000; i += 2)
     System.out.println(count);
   }
 
-  public static int rotate(int n)
-  {
+  public static int rotate(int n) {
     int a = n % 10;
     n /= 10;
     int b = 1;
@@ -39,8 +33,7 @@ a:  for(int i = 3; i < 1000000; i += 2)
     return n;
   }
 
-  public static boolean isPrime(int n)
-  {
+  public static boolean isPrime(int n) {
     if(n % 2 == 0)
       return false;
 

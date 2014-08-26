@@ -1,7 +1,6 @@
 import java.util.*;
 
-class Euler74
-{
+class Euler74 {
   public static final long ZERO = factorial(0);
   public static final long ONE = factorial(1);
   public static final long TWO = factorial(2);
@@ -13,24 +12,20 @@ class Euler74
   public static final long EIGHT = factorial(8);
   public static final long NINE = factorial(9);
 
-  public static void main(String[] arg)
-  {
+  public static void main(String[] arg) {
     int answer = 0;
 
-    for(int i = 1; i < 1000000; i++)
-    {
+    for(int i = 1; i < 1000000; i++) {
       Set<Long> set = new HashSet<Long>();
       
       long value = i;
 
 
-      while(!set.contains(value))
-      {
+      while(!set.contains(value)) {
         set.add(value);
 
         long sum = 0;
-        while(value != 0)
-        {
+        while(value != 0) {
           sum += digitFactorial((int) value % 10);
           value = value / 10;
         }
@@ -45,15 +40,12 @@ class Euler74
     System.out.println(answer);
   }
 
-  public static long factorial(long n)
-  {
+  public static long factorial(long n) {
     return ((n == 0) ? 1 : (n * factorial(n-1)));
   }
 
-  public static long digitFactorial(int digit)
-  {
-    switch(digit)
-    {
+  public static long digitFactorial(int digit) {
+    switch(digit) {
       case 0: return ZERO;
       case 1: return ONE;
       case 2: return TWO;

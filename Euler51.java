@@ -1,57 +1,46 @@
 import java.util.*;
 
-class Euler51
-{
-  public static void main(String arg[])
-  {
+class Euler51 {
+  public static void main(String arg[]) {
     long num = 3;
 
     int count = 0;
 
-    while(count != 8)
-    {
+    while(count != 8) {
       num += 2;
 
       if(!isPrime(num))
         continue;
 
       count = calculate("" + num);
-      //System.err.println(num + " " + count);
     }
     
     System.out.println(num);
   }
   
 
-  public static int calculate(String num)
-  {
+  public static int calculate(String num) {
     int length = num.length();
     int pivots = (int) Math.pow(2, length);
 
     int count = 0;
     int temp;
 
-    for(int i = 1; i < pivots; i++)
-    {
+    for(int i = 1; i < pivots; i++) {
       temp = 0;
       
       String bin = Integer.toBinaryString(i);
-      //System.err.println(bin);
       ArrayList<Integer> arr = new ArrayList<Integer>(bin.length());
-      for(int j = bin.length()-1, k = 0; j >= 0; j--, k++)
-      {
+      for(int j = bin.length()-1, k = 0; j >= 0; j--, k++) {
         if(bin.charAt(j) == '1')
           arr.add(k);
       }
-      for(char ch = '0'; ch <= '9'; ch++)
-      {
+      for(char ch = '0'; ch <= '9'; ch++) {
         char[] digits = num.toCharArray();
         for(Integer index : arr)
           digits[length-index.intValue()-1] = ch;
 
-        if(isPrime(Long.parseLong(new String(digits))) && digits[0] != '0')
-        {
-          //System.out.println(new String(digits));
+        if(isPrime(Long.parseLong(new String(digits))) && digits[0] != '0') {
           temp++;
         }
       }
@@ -64,8 +53,7 @@ class Euler51
     return count;
   }
 
-  public static boolean isPrime(long n)
-  {
+  public static boolean isPrime(long n) {
     if(n < 2)
       return false;
 

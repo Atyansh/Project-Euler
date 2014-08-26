@@ -1,9 +1,7 @@
 import java.util.*;
 
-class Euler50
-{
-  public static void main(String[] arg)
-  {
+class Euler50 {
+  public static void main(String[] arg) {
     LinkedList<Integer> primes = new LinkedList<Integer>();
 
     primes.add(2);
@@ -25,21 +23,17 @@ class Euler50
 
     int consecutive = 0;
 
-a:  for(int i = 0; i < length; i++)
-    {
+a:  for(int i = 0; i < length; i++) {
       sum = 0;
-      for(int j = i; j < length; j++)
-      {
+      for(int j = i; j < length; j++) {
         sum += arr[j];
         if(sum > maxPrime)
           continue a;
 
-        if(Arrays.binarySearch(arr, sum) >= 0)
-        {
+        if(Arrays.binarySearch(arr, sum) >= 0) {
           consecutive = j-i+1;
           
-          if(consecutive > max)
-          {
+          if(consecutive > max) {
             max = consecutive;
             prime = sum;
           }
@@ -50,8 +44,7 @@ a:  for(int i = 0; i < length; i++)
     System.out.println(prime);
   }
 
-  public static boolean isPrime(int n)
-  {
+  public static boolean isPrime(int n) {
     if(n == 2)
       return true;
 

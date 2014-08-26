@@ -1,8 +1,7 @@
 import java.util.*;
 import java.io.*;
 
-class Roman
-{
+class Roman {
   public static final Roman I = new Roman("I", 1);
   public static final Roman IV = new Roman("IV", 4);
   public static final Roman V = new Roman("V", 5);
@@ -22,14 +21,12 @@ class Roman
   public String roman;
   public int value;
 
-  private Roman(String roman, int value)
-  {
+  private Roman(String roman, int value) {
     this.roman = roman;
     this.value = value;
   }
 
-  public static int value(char roman)
-  {
+  public static int value(char roman) {
     if(roman == 'I')
       return I.value;
     else if(roman == 'V')
@@ -49,14 +46,12 @@ class Roman
                                          + roman);
   }
 
-  public static int romanToInteger(String roman)
-  {
+  public static int romanToInteger(String roman) {
     int num = 0;
 
     num += value(roman.charAt(roman.length() - 1));
 
-    for(int i = roman.length() - 2; i >= 0; i--)
-    {
+    for(int i = roman.length() - 2; i >= 0; i--) {
       int current = value(roman.charAt(i));
       int prev = value(roman.charAt(i + 1));
       if(current >= prev)
@@ -68,14 +63,11 @@ class Roman
     return num;
   }
 
-  public static String integerToRoman(int num)
-  {
+  public static String integerToRoman(int num) {
     String roman = "";
 
-    for(int i = arr.length - 1; i >= 0; i--)
-    {
-      while(num >= arr[i].value)
-      {
+    for(int i = arr.length - 1; i >= 0; i--) {
+      while(num >= arr[i].value) {
         roman += arr[i].roman;
         num -= arr[i].value;
       }
@@ -84,28 +76,23 @@ class Roman
   }
 }
 
-class Euler89
-{
-  public static void main(String[] arg)
-  {
+class Euler89 {
+  public static void main(String[] arg) {
     File file = new File("Euler89.txt");
 
     Scanner scan;
 
-    try
-    {
+    try {
       scan = new Scanner(file);
     }
-    catch(FileNotFoundException e)
-    {
+    catch(FileNotFoundException e) {
       System.err.println("File Not Found");
       return;
     }
     
     int answer = 0;
 
-    while(scan.hasNextLine())
-    {
+    while(scan.hasNextLine()) {
       String roman = scan.nextLine();
 
       String min = Roman.integerToRoman(Roman.romanToInteger(roman));

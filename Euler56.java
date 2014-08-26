@@ -1,9 +1,7 @@
 import java.math.BigInteger;
 
-class Euler56
-{
-  public static void main(String[] arg)
-  {
+class Euler56 {
+  public static void main(String[] arg) {
     int a = 1;
     int b;
 
@@ -13,14 +11,12 @@ class Euler56
     int sum = 0;
     int temp;
 
-    while(a < 100)
-    {
+    while(a < 100) {
       a++;
       b = 1;
       num = new BigInteger("" + a);
 
-      while(b < 100)
-      {
+      while(b < 100) {
         b++;
 
         exp = num.pow(b);
@@ -35,8 +31,7 @@ class Euler56
     System.out.println(sum);
   }
 
-  public static int digitSum(String num)
-  {
+  public static int digitSum(String num) {
     int length = num.length();
     int sum = 0;
 

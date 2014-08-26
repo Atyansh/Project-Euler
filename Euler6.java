@@ -1,9 +1,5 @@
-class Euler6
-{
-
-  public static void main(String arg[])
-  {
-    
+class Euler6 {
+  public static void main(String arg[]) {
     long a = 0, b, c;
 
     for(int i = 1; i <= 100; i++)
@@ -14,6 +10,5 @@ class Euler6
     c = b-a;
 
     System.out.println(c);
-
   }
 }

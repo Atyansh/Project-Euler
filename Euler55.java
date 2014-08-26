@@ -1,22 +1,18 @@
 import java.math.BigInteger;
 
-class Euler55
-{
-  public static void main(String[] arg)
-  {
+class Euler55 {
+  public static void main(String[] arg) {
     int count = 0;
 
     int num = 11;
     BigInteger regular;
     BigInteger reverse;
 
-outer:while(num < 10000)
-    {
+outer:while(num < 10000) {
       num++;
       regular = new BigInteger("" + num);
 
-      for(int i = 0; i < 50; i++)
-      {
+      for(int i = 0; i < 50; i++) {
         reverse = reverse(regular.toString());
 
         regular = regular.add(reverse);
@@ -31,8 +27,7 @@ outer:while(num < 10000)
     System.out.println(count);
   }
 
-  public static BigInteger reverse(String num)
-  {
+  public static BigInteger reverse(String num) {
     int length = num.length();
     String reverse = "";
 
@@ -42,8 +37,7 @@ outer:while(num < 10000)
     return new BigInteger(reverse);
   }
 
-  public static boolean palindrome(String num)
-  {
+  public static boolean palindrome(String num) {
     int length = num.length();
 
     for(int i = 0; i < length/2; i++)

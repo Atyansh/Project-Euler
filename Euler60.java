@@ -1,10 +1,8 @@
 import java.util.*;
 import java.io.*;
 
-class Euler60
-{
-  public static void main(String[] arg)
-  {
+class Euler60 {
+  public static void main(String[] arg) {
     int primeCount = 1230;
     int num = 5;
     int offset = 0;
@@ -14,8 +12,7 @@ class Euler60
 
     int sum = 0;
 
-    for(int i = 0, j = 3; i < primeCount; j += 2)
-    {
+    for(int i = 0, j = 3; i < primeCount; j += 2) {
       if(isPrime(j))
         primes[i++] = j;
     }
@@ -28,17 +25,14 @@ class Euler60
     System.out.println(sum);
   }
 
-  public static boolean pairSet(int[] primes, int[] set, int num, int offset)
-  {
+  public static boolean pairSet(int[] primes, int[] set, int num, int offset) {
     if(offset >= num)
       return true;
 
-x:  for(int i = offset; i < primes.length - (num - offset - 1); i++)
-    {
+x:  for(int i = offset; i < primes.length - (num - offset - 1); i++) {
       set[offset] = primes[i];
       
-      for(int j = 0; j < offset; j++)
-      {
+      for(int j = 0; j < offset; j++) {
         if(!isPrime(set[j] + "" + set[offset]) ||
            !isPrime(set[offset] + "" + set[j]))
           continue x;
@@ -50,8 +44,7 @@ x:  for(int i = offset; i < primes.length - (num - offset - 1); i++)
     return false;
   }
   
-  public static boolean isPrime(long n)
-  {
+  public static boolean isPrime(long n) {
     long sqrt = (long) Math.sqrt(n);
 
     for(long i = 3; i <= sqrt; i += 2)
@@ -61,8 +54,7 @@ x:  for(int i = offset; i < primes.length - (num - offset - 1); i++)
     return true;
   }
   
-  public static boolean isPrime(String num)
-  {
+  public static boolean isPrime(String num) {
     return isPrime(Long.parseLong(num));
   }
 }

@@ -1,17 +1,13 @@
-class Euler3
-{
+class Euler3 {
 
-  public static void main(String arg[])
-  {
+  public static void main(String arg[]) {
     long num = 600851475143l;
     long i = 7;
 
     long answer = num;
 
-    while(num > 1)
-    {
-      while(num % i == 0)
-      {
+    while(num > 1) {
+      while(num % i == 0) {
         num /= i;
         answer = i;
       }

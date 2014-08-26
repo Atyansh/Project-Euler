@@ -1,19 +1,14 @@
-class Euler71
-{
-  public static void main(String[] arg)
-  {
+class Euler71 {
+  public static void main(String[] arg) {
     double difference = 0;
     int num = 0;
 
-    for(int i = 8; i <= 1000000; i++)
-    {
+    for(int i = 8; i <= 1000000; i++) {
       int j = 3*i/7;
 
-      if(hcf(i,j) == 1)
-      {
+      if(hcf(i,j) == 1) {
         double temp = ((double)j)/i;
-        if(temp > difference)
-        {
+        if(temp > difference) {
           difference = temp;
           num = j;
         }
@@ -23,11 +18,9 @@ class Euler71
     System.out.println(num);
   }
 
-  public static int hcf(int a, int b)
-  {
+  public static int hcf(int a, int b) {
     int c = a % b;
-    while(c != 0)
-    {
+    while(c != 0) {
       a = b;
       b = c;
       c = a % b;

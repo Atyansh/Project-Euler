@@ -1,8 +1,5 @@
-class Euler27
-{
-  public static void main(String[] arg)
-  {
-
+class Euler27 {
+  public static void main(String[] arg) {
     long prime;
     long length; 
     long max = 0;
@@ -12,23 +9,19 @@ class Euler27
 
     long product;
 
-    for(int a = -999; a < 1000; a++)
-    {
-      for(int b = 3; b < 1000; b += 2)
-      {
+    for(int a = -999; a < 1000; a++) {
+      for(int b = 3; b < 1000; b += 2) {
         prime = b;
         length = n = 0;
 
-        while(isPrime(prime))
-        {
+        while(isPrime(prime)) {
           length++;
           n++;
 
           prime = n*n + a*n + b;
         }
 
-        if(length > max)
-        {
+        if(length > max) {
           max = length;
           A = a;
           B = b;
@@ -41,8 +34,7 @@ class Euler27
     System.out.println(product);
   }
 
-  public static boolean isPrime(long n)
-  {
+  public static boolean isPrime(long n) {
     if(n < 2)
       return false;
 

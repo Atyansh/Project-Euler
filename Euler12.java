@@ -1,16 +1,12 @@
-class Euler12
-{
-  public static void main(String arg[])
-  {
+class Euler12 {
+  public static void main(String arg[]) {
     long n = 1;
     long triangle = 0;
     long value = 0;
 
-    while(value < 500)
-    {
+    while(value < 500) {
       triangle += n;
       n++;
-      //System.out.println(triangle);
       value = countFactors(triangle);
     }
 
@@ -18,15 +14,13 @@ class Euler12
   }
 
 
-  public static long countFactors(long n)
-  {
+  public static long countFactors(long n) {
     long count = 1;
     long i = 3;
     long freq = 0;
     long next;
 
-    while(n % 2 == 0)
-    {
+    while(n % 2 == 0) {
       n /= 2;
       freq++;
     }
@@ -34,10 +28,8 @@ class Euler12
     
     freq = 0;
 
-    while(n > 1)
-    {
-      while(n % i == 0)
-      {
+    while(n > 1) {
+      while(n % i == 0) {
         n /= i;
         freq++;
       }

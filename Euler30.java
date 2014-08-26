@@ -1,11 +1,8 @@
-class Euler30
-{
-  public static void main(String arg[])
-  {
+class Euler30 {
+  public static void main(String arg[]) {
     long sum = 0;
     long num;
     long dSum;
-
 
     /*
      *  Note- The reason I'm looping only till a million and not beyond (even
@@ -17,13 +14,11 @@ class Euler30
      *        progression.
      */
 
-    for(long i = 101; i < 1000000; i++)
-    {
+    for(long i = 101; i < 1000000; i++) {
       num = i;
       dSum = 0;
 
-      while(num != 0)
-      {
+      while(num != 0) {
         dSum += (long) Math.pow(num % 10, 5);
         num /= 10;
       }

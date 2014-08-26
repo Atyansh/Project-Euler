@@ -1,9 +1,7 @@
 import java.math.BigInteger;
 
-class Euler57
-{
-  public static void main(String[] arg)
-  {
+class Euler57 {
+  public static void main(String[] arg) {
     BigInteger num = new BigInteger("" + 1);
     BigInteger den = new BigInteger("" + 2);
     
@@ -11,8 +9,7 @@ class Euler57
 
     int count = 0;
 
-    for(int i = 0; i < 1000; i++)
-    {
+    for(int i = 0; i < 1000; i++) {
       if(num.add(den).toString().length() > den.toString().length())
         count++;
 

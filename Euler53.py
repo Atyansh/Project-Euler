@@ -3,13 +3,11 @@ def fact(n):
     return 2
   return n*fact(n-1)
 
-
 list = [1, 2]
 count = 0
 
 def comb(n, r):
   return list[n-1]/list[n-r-1]/list[r-1]
-
 
 for i in range(3, 101):
   list.append(fact(i))

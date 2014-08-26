@@ -13,11 +13,8 @@ class Euler13
     BigInteger b = new BigInteger("0");
 
     while(scan.hasNext())
-    {
       b = b.add(scan.nextBigInteger());
-    }
 
     System.out.println(b.toString());
   }
-
 }

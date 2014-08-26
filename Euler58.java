@@ -1,19 +1,15 @@
-class Euler58
-{
-  public static void main(String[] arg)
-  {
+class Euler58 {
+  public static void main(String[] arg) {
     int side = 1;
     int num = 1;
     int prime = 0;
     int total = 1;
 
-    while(true)
-    {
+    while(true) {
       side += 2;
       total += 4;
 
-      for(int i = 0; i < 3; i++)
-      {
+      for(int i = 0; i < 3; i++) {
         num += (side - 1);
         if(isPrime(num))
           prime++;
@@ -28,8 +24,7 @@ class Euler58
     System.out.println(side);
   }
 
-  public static boolean isPrime(int n)
-  {
+  public static boolean isPrime(int n) {
     if(n % 2 == 0)
       return false;
 

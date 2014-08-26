@@ -1,21 +1,16 @@
-class Euler39
-{
-  public static void main(String[] arg)
-  {
+class Euler39 {
+  public static void main(String[] arg) {
     long count;
     long max = 0;
     int p = 3;
     int maxP = 0;
     int A, B, C;
 
-    while(p <= 1000)
-    {
+    while(p <= 1000) {
       count = 0;
 
-      for(int a = 1; a < p-1; a++)
-      {
-        for(int b = 1; b < p-a-1; b++)
-        {
+      for(int a = 1; a < p-1; a++) {
+        for(int b = 1; b < p-a-1; b++) {
           int c = p-a-b;
           
           A = a*a; B = b*b; C = c*c;
@@ -25,8 +20,7 @@ class Euler39
         }
       }
       
-      if(count > max)
-      {
+      if(count > max) {
         max = count;
         maxP = p;
       }

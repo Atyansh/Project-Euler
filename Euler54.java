@@ -1,26 +1,21 @@
 import java.util.*;
 import java.io.*;
 
-class Euler54
-{
-  public static void main(String[] arg)
-  {
+class Euler54 {
+  public static void main(String[] arg) {
     File file = new File("poker.txt");
     Scanner scan;
-    try
-    {
+    try {
       scan = new Scanner(file);
     }
-    catch(FileNotFoundException e)
-    {
+    catch(FileNotFoundException e) {
       System.err.println("File not found");
       return;
     }
 
     int count = 0;
 
-    while(scan.hasNextLine())
-    {
+    while(scan.hasNextLine()) {
       String line = scan.nextLine();
 
       String[] tokens = line.split(" ");
@@ -43,8 +38,7 @@ class Euler54
   }
 }
 
-class Card implements Comparable<Card>
-{
+class Card implements Comparable<Card> {
   public int value;
   public int suit;
 
@@ -67,8 +61,7 @@ class Card implements Comparable<Card>
   public static final int KING = 13;
   public static final int ACE = 14;
 
-  public Card(String card)
-  {
+  public Card(String card) {
     char a1 = card.charAt(0);
     char a2 = card.charAt(1);
 
@@ -85,8 +78,7 @@ class Card implements Comparable<Card>
     else if(a1 == 'A')
       value = ACE;
 
-    switch(a2)
-    {
+    switch(a2) {
       case 'H': suit = HEARTS;
                 break;
       case 'C': suit = CLUBS;
@@ -98,8 +90,7 @@ class Card implements Comparable<Card>
     }
   }
 
-  public int compareTo(Card c)
-  {
+  public int compareTo(Card c) {
     if(this.value < c.value)
       return -1;
     else if(this.value > c.value)
@@ -108,30 +99,25 @@ class Card implements Comparable<Card>
       return 0;
   }
 
-  public String toString()
-  {
+  public String toString() {
     return "{" + value + ", " + suit + "}";
   }
 }
 
-class Hand
-{
+class Hand {
   public Card[] c;
   public int p1, p2;
 
-  public Hand(Card[] c)
-  {
+  public Hand(Card[] c) {
     this.c = c;
   }
 }
 
-class Poker
-{
+class Poker {
   Hand h1;
   Hand h2;
 
-  public Poker(Card[] c1, Card[] c2)
-  {
+  public Poker(Card[] c1, Card[] c2) {
     Arrays.sort(c1);
     Arrays.sort(c2);
 
@@ -139,8 +125,7 @@ class Poker
     h2 = new Hand(c2);
   }
 
-  public boolean determineWinner()
-  {
+  public boolean determineWinner() {
     boolean case1, case2;
 
     case1 = straightFlush(h1);
@@ -156,8 +141,7 @@ class Poker
     case1 = fourOfAKind(h1);
     case2 = fourOfAKind(h2);
 
-    if(case1 && case2)
-    {
+    if(case1 && case2) {
       if(h1.c[2].value > h2.c[2].value)
         return true;
       else if(h1.c[2].value < h2.c[2].value)
@@ -174,8 +158,7 @@ class Poker
     case1 = fullHouse(h1);
     case2 = fullHouse(h2);
 
-    if(case1 && case2)
-    {
+    if(case1 && case2) {
       if(h1.c[2].value > h2.c[2].value)
         return true;
       else if(h1.c[2].value < h2.c[2].value)
@@ -192,8 +175,7 @@ class Poker
     case1 = flush(h1);
     case2 = flush(h2);
 
-    if(case1 && case2)
-    {
+    if(case1 && case2) {
       return winner();
     }
     if(case1)
@@ -204,8 +186,7 @@ class Poker
     case1 = straight(h1);
     case2 = straight(h2);
 
-    if(case1 && case2)
-    {
+    if(case1 && case2) {
       return winner();
     }
     if(case1)
@@ -216,8 +197,7 @@ class Poker
     case1 = threeOfAKind(h1);
     case2 = threeOfAKind(h2);
 
-    if(case1 && case2)
-    {
+    if(case1 && case2) {
       if(h1.c[2].value > h2.c[2].value)
         return true;
       else
@@ -231,8 +211,7 @@ class Poker
     case1 = twoPair(h1);
     case2 = twoPair(h2);
 
-    if(case1 && case2)
-    {
+    if(case1 && case2) {
       if(h1.p1 > h2.p1)
         return true;
       else if(h1.p1 < h2.p1)
@@ -252,8 +231,7 @@ class Poker
     case1 = pair(h1);
     case2 = pair(h2);
 
-    if(case1 && case2)
-    {
+    if(case1 && case2) {
       if(h1.p1 > h2.p1)
         return true;
       else if(h1.p1 < h2.p1)
@@ -269,16 +247,14 @@ class Poker
     return winner();
   }
 
-  public boolean flush(Hand h)
-  {
+  public boolean flush(Hand h) {
     return (h.c[0].suit == h.c[1].suit &&
            h.c[0].suit == h.c[2].suit &&
            h.c[0].suit == h.c[3].suit &&
            h.c[0].suit == h.c[4].suit);
   }
 
-  private boolean straight(Hand h)
-  {
+  private boolean straight(Hand h) {
     if(h.c[0].value == Card.TWO &&
        h.c[1].value == Card.THREE &&
        h.c[2].value == Card.FOUR &&
@@ -293,8 +269,7 @@ class Poker
             h.c[1].value - h.c[0].value == 1);
   }
 
-  private boolean fourOfAKind(Hand h)
-  {
+  private boolean fourOfAKind(Hand h) {
     return( (h.c[0].value == h.c[1].value &&
              h.c[1].value == h.c[2].value &&
              h.c[2].value == h.c[3].value) ||
@@ -303,8 +278,7 @@ class Poker
              h.c[3].value == h.c[4].value) );
   }
 
-  private boolean threeOfAKind(Hand h)
-  {
+  private boolean threeOfAKind(Hand h) {
     return( (h.c[0].value == h.c[1].value &&
              h.c[1].value == h.c[2].value) ||
             (h.c[1].value == h.c[2].value &&
@@ -313,47 +287,39 @@ class Poker
              h.c[3].value == h.c[4].value) );
   }
 
-  private boolean pair(Hand h)
-  {
+  private boolean pair(Hand h) {
     if(h.c[0].value == h.c[1].value &&
-       h.c[1].value != h.c[2].value)
-    {
+       h.c[1].value != h.c[2].value) {
       h.p1 = h.c[0].value;
       return true;
     }
     if(h.c[0].value != h.c[1].value &&
        h.c[1].value == h.c[2].value &&
-       h.c[2].value != h.c[3].value)
-    {
+       h.c[2].value != h.c[3].value) {
       h.p1 = h.c[1].value;
       return true;
     }
     if(h.c[1].value != h.c[2].value &&
        h.c[2].value == h.c[3].value &&
-       h.c[3].value != h.c[4].value)
-    {
+       h.c[3].value != h.c[4].value) {
       h.p1 = h.c[2].value;
       return true;
     }
     if(h.c[2].value != h.c[3].value &&
-       h.c[3].value == h.c[4].value)
-    {
+       h.c[3].value == h.c[4].value) {
       h.p1 = h.c[3].value;
       return true;
     }
     return false;
   }
 
-  private boolean twoPair(Hand h)
-  {
+  private boolean twoPair(Hand h) {
     int count = 0;
     int index = 0;
     int temp;
 
-    while(index < 4)
-    {
-      if(h.c[index++].value == h.c[index].value)
-      {
+    while(index < 4) {
+      if(h.c[index++].value == h.c[index].value) {
         if(h.p1 == 0)
           h.p1 = h.c[index].value;
         else
@@ -362,8 +328,7 @@ class Poker
         count++;
       }
     }
-    if(h.p2 > h.p1)
-    {
+    if(h.p2 > h.p1) {
       temp = h.p1;
       h.p1 = h.p2;
       h.p2 = temp;
@@ -371,20 +336,16 @@ class Poker
     return (count == 2);
   }
 
-  private boolean fullHouse(Hand h)
-  {
+  private boolean fullHouse(Hand h) {
     return threeOfAKind(h) && pair(h);
   }
   
-  private boolean straightFlush(Hand h)
-  {
+  private boolean straightFlush(Hand h) {
     return straight(h) && flush(h);
   }
 
-  private boolean winner()
-  {
-    for(int i = 4; i >= 0; i--)
-    {
+  private boolean winner() {
+    for(int i = 4; i >= 0; i--) {
       if(h1.c[i].value > h2.c[i].value)
         return true;
       else if(h1.c[i].value < h2.c[i].value)

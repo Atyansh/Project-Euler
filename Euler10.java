@@ -1,11 +1,8 @@
-class Euler10
-{
-  public static void main(String arg[])
-  {
+class Euler10 {
+  public static void main(String arg[]) {
     long sum = 2;
 
-    for(long i = 3; i < 2000000; i += 2)
-    {
+    for(long i = 3; i < 2000000; i += 2) {
       if(isPrime(i))
         sum += i;
     }
@@ -13,8 +10,7 @@ class Euler10
     System.out.println(sum);
   }
 
-  public static boolean isPrime(long n)
-  {
+  public static boolean isPrime(long n) {
     long sqrt = (long) Math.sqrt(n);
 
     for(long i = 3; i <= sqrt; i += 2)

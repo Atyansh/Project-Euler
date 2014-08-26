@@ -1,14 +1,10 @@
-class Euler36
-{
-  public static void main(String[] arg)
-  {
+class Euler36 {
+  public static void main(String[] arg) {
     long sum = 0;
     String num;
     String bin;
 
-
-    for(int i = 1; i < 1000000; i++)
-    {
+    for(int i = 1; i < 1000000; i++) {
       num = Integer.toString(i);
       bin = Integer.toBinaryString(i);
 
@@ -19,8 +15,7 @@ class Euler36
     System.out.println(sum);
   }
 
-  public static boolean checkPalindrome(String str)
-  {
+  public static boolean checkPalindrome(String str) {
     int length = str.length();
 
     for(int i = 0; i < length/2; i++)

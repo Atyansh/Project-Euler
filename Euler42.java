@@ -1,10 +1,8 @@
 import java.io.*;
 import java.util.*;
 
-class Euler42
-{
-  public static void main(String[] arg) throws IOException
-  {
+class Euler42 {
+  public static void main(String[] arg) throws IOException {
     File file = new File("Euler42.txt");
 
     Scanner scan = new Scanner(file);
@@ -18,8 +16,7 @@ class Euler42
     int count = 0;
     int triangle;
 
-    for(int i = 0; i < arr.length; i++)
-    {
+    for(int i = 0; i < arr.length; i++) {
       value = getValue(arr[i]);
       
       triangle = (int) Math.sqrt(value*2);
@@ -32,8 +29,7 @@ class Euler42
   }
 
 
-  public static int getValue(String str)
-  {
+  public static int getValue(String str) {
     int length = str.length();
     int value = 0;
 

@@ -1,12 +1,10 @@
 import java.math.*;
 
-class Euler16
-{
-  public static void main(String arg[])
-  {
+class Euler16 {
+  public static void main(String arg[]) {
     BigInteger b = new BigInteger("2");
 
-      b = b.pow(1000);
+    b = b.pow(1000);
 
     String s = b.toString();
     int length = s.length();

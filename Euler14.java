@@ -1,17 +1,13 @@
-class Euler14
-{
-  public static void main(String arg[])
-  {
+class Euler14 {
+  public static void main(String arg[]) {
     int count = 0;
     long max = 0;
     long index = 0;
     
-    for(long i = 3; i < 1000000; i++)
-    {
+    for(long i = 3; i < 1000000; i++) {
       count = chain(i);
 
-      if(count > max)
-      {
+      if(count > max) {
         max = count;
         index = i;
       }
@@ -21,13 +17,10 @@ class Euler14
   }
   
 
-  public static int chain(long n)
-  {
-
+  public static int chain(long n) {
     int count = 1;
 
-    while(n != 1)
-    {
+    while(n != 1) {
       if(n % 2 == 0)
         n /= 2;
       else

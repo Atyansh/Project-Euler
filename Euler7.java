@@ -1,11 +1,8 @@
-class Euler7
-{
-  public static void main(String arg[])
-  {
+class Euler7 {
+  public static void main(String arg[]) {
     int n = 1;
     long i = 3;
-    while(n != 10001)
-    {
+    while(n != 10001) {
       if(isPrime(i))
         n++;
       i += 2;
@@ -14,8 +11,7 @@ class Euler7
     System.out.println(i - 2);
   }
 
-  public static boolean isPrime(long n)
-  {
+  public static boolean isPrime(long n) {
     long a = (long) Math.sqrt(n);
 
     if(n % 2 == 0)

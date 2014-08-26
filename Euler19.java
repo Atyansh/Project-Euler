@@ -1,7 +1,5 @@
-class Euler19
-{
-  public static void main(String arg[])
-  {
+class Euler19 {
+  public static void main(String arg[]) {
     int date = 1;
     int month = 1;
     int year = 1901;
@@ -9,8 +7,7 @@ class Euler19
 
     int count = 0;
 
-    while(year != 2001)
-    {
+    while(year != 2001) {
       if(date == 1 && day == 0)
         count++;
       
@@ -20,14 +17,12 @@ class Euler19
       if((date == 29 && month == 2 && (!(leap(year)))) ||
          (date == 30 && month == 2) ||
          (date == 31 && (month == 4 || month == 6 || month == 9 || month == 11)) ||
-         (date == 32))
-      {
+         (date == 32)) {
         date = 1;
 	      month++;
       }
       
-      if(month == 13)
-      {
+      if(month == 13) {
         month = 1;
         year++;
       }
@@ -36,8 +31,7 @@ class Euler19
     System.out.println(count);
   }
 
-  public static boolean leap(int year)
-  {
+  public static boolean leap(int year) {
     if(year % 400 == 0)
       return true;
 

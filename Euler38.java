@@ -1,9 +1,7 @@
 import java.util.*;
 
-class Euler38
-{
-  public static void main(String[] arg)
-  {
+class Euler38 {
+  public static void main(String[] arg) {
     TreeSet<Integer> digits;
 
     int max = 0;
@@ -12,19 +10,16 @@ class Euler38
     int count;
     String str;
 
-a:  for(int i = 1; i < 10000; i++)
-    {
+a:  for(int i = 1; i < 10000; i++) {
       digits = new TreeSet<Integer>();
       count = 0;
       n = 1;
       str = "";
 
-      while(count < 9)
-      {
+      while(count < 9) {
         num = n*i;
         str = str + num;
-        while(num != 0)
-        {
+        while(num != 0) {
           if(num % 10 == 0 || !digits.add(num % 10))
             continue a;
           
@@ -37,8 +32,7 @@ a:  for(int i = 1; i < 10000; i++)
 
       num = Integer.parseInt(str);
       
-      if(num > max)
-      {
+      if(num > max) {
         max = num;
         System.out.println(i);
       }

@@ -1,20 +1,15 @@
-class Euler17
-{
-  
+class Euler17 {
   String word;
   int count;
   int freq;
   
-
-  public Euler17(String word, int count, int freq)
-  {
+  public Euler17(String word, int count, int freq) {
     this.word = word;
     this.count = count;
     this.freq = freq;
   }
   
-  public static void main(String arg[])
-  {
+  public static void main(String arg[]) {
     int and = 3;
     int numAnd = 99*9*and;
 
@@ -24,18 +19,14 @@ class Euler17
 
     long count = 0;
 
-    for(int i = 0; i < words.length; i++)
-    {
+    for(int i = 0; i < words.length; i++) {
       count += (words[i].freq * words[i].count);
     }
 
     System.out.println(count);
-
   }
 
-
-  public static void initializeWords(Euler17[] words)
-  {
+  public static void initializeWords(Euler17[] words) {
    
     words[0] = new Euler17("one",         3,  9*10+101);
     words[1] = new Euler17("two",         3,  9*10+100);

@@ -1,9 +1,7 @@
 import java.util.*;
 
-class Euler49
-{
-  public static void main(String arg[])
-  {
+class Euler49 {
+  public static void main(String arg[]) {
     String str, prev;
     char[] arr;
     int count;
@@ -12,10 +10,8 @@ class Euler49
     int prevValue;
     String nextDiff;
 
-    for(int i = 1001; i < 9999; i += 2)
-    {
-      if(isPrime(i))
-      {
+    for(int i = 1001; i < 9999; i += 2) {
+      if(isPrime(i)) {
         str = "" + i;
         prev = str;
         nextDiff = str;
@@ -23,21 +19,17 @@ class Euler49
         arr = str.toCharArray();
         Euler24.next(arr, 3);
         
-        while(!nextDiff.equals(new String(arr)))
-        {
+        while(!nextDiff.equals(new String(arr))) {
           str = "" + i;
           count = 1;
           diff = Integer.parseInt(new String(arr)) - i;
           prevValue = i;
           nextDiff = new String(arr);
 
-          while(!prev.equals(new String(arr)))
-          {
+          while(!prev.equals(new String(arr))) {
             value = Integer.parseInt(new String(arr));
-            if(isPrime(Integer.parseInt(new String(arr))))
-            {
-              if((value - prevValue) == diff)
-              {
+            if(isPrime(Integer.parseInt(new String(arr)))) {
+              if((value - prevValue) == diff) {
                 count++;
                 str += new String(arr);
                 prevValue = value;
@@ -58,8 +50,7 @@ class Euler49
     }
   }
 
-  public static boolean isPrime(int n)
-  {
+  public static boolean isPrime(int n) {
     if(n % 2 == 0)
       return false;
 
@@ -72,12 +63,10 @@ class Euler49
     return true;
   }
 
-  public static boolean uniqueDigits(int n)
-  {
+  public static boolean uniqueDigits(int n) {
     TreeSet<Integer> digits = new TreeSet<Integer>();
 
-    while(n != 0)
-    {
+    while(n != 0) {
       if(!digits.add(n % 10))
         return false;
       n /= 10;
