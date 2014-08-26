@@ -1,10 +1,8 @@
-from math import sqrt
-
 N = 10001
 answer = 0
 
 for i in range(2, N):
-  sq = sqrt(i)
+  sq = i ** 0.5
   n = int(sq)
 
   if n*n == i:
