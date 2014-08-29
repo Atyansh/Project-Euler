@@ -5,7 +5,7 @@ class Grid extends JFrame{
 
   Block[][] grid;
 
-  public Grid(char[][] grid){
+  public Grid(char[][] grid) {
     int row = grid.length;
     int column = grid[0].length;
 

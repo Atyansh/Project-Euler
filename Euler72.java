@@ -19,7 +19,6 @@ class Euler72 {
     long answer = 0;
 
     for(int i = 2; i <= 1000000; i++){
-      //System.out.println(i);
       int num = i;
       int p = 2;
 
@@ -47,7 +46,6 @@ class Euler72 {
         p += 2;
       }
 
-      //System.out.println(map);
       List<Tuple> tuples = calculate(map.keySet());
 
       int simple = productPrime(map.keySet());
@@ -76,7 +74,6 @@ class Euler72 {
   public static List<Tuple> calculate(Set<Integer> set) {
     List<Integer> list = new ArrayList<>();
     list.addAll(set);
-    //System.out.println(list);
 
     List<Tuple> tuples = new LinkedList<>();
 
@@ -102,7 +99,6 @@ class Euler72 {
       tuples.add(tuple);
     }
 
-    //System.out.println(tuples);
 
     return tuples;
   }
